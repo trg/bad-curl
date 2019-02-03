@@ -1,0 +1,18 @@
+# Welcome to Serverless!
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+
+service: bad-curl # NOTE: update this with your service name
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  badCurl:
+    handler: handler.badCurl
+    events:
+      - http:
+          path: howdy.sh
+          method: get
